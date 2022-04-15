@@ -6,21 +6,18 @@ const cardTankYou = document.querySelector('#tankYou');
 
 const numberRated = document.querySelector('#numberRated');
 
-var value
-
-// console.log(btnRate);
+var value;
 
 btnsRate.forEach(btnRate => {
     btnRate.addEventListener('click', (e) => {
-        // console.log('buenas');
         console.log(e.target);
 
         for (const btn of btnsRate) {
             if (btn.classList.contains('selected')) {
                 btn.classList.toggle('selected');
-            }
+            };
         
-        }
+        };
         e.target.classList.toggle('selected');
         value = e.target.dataset.number;
 
@@ -35,4 +32,3 @@ btnSubmit.addEventListener('click', () => {
 
     numberRated.textContent = value
 });
-
