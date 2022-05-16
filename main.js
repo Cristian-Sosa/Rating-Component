@@ -1,5 +1,4 @@
 const btnsRate = document.querySelectorAll('.number-rate');
-const btnSubmit = document.querySelector('#btnSubmit');
 
 const cardRating = document.querySelector('#rating');
 const cardTankYou = document.querySelector('#tankYou');
@@ -8,27 +7,31 @@ const numberRated = document.querySelector('#numberRated');
 
 var value;
 
-btnsRate.forEach(btnRate => {
-    btnRate.addEventListener('click', (e) => {
-        console.log(e.target);
+document.addEventListener('click', (e) =>{
+    if (e.target.id == 'btnSubmit') {
+        cambiarCard();
 
-        for (const btn of btnsRate) {
-            if (btn.classList.contains('selected')) {
-                btn.classList.toggle('selected');
-            };
-        
-        };
+        numberRated.textContent = value
+    }
+
+
+    if (e.target.classList.contains('number-rate')) {
+        deseleccionarBotones();
         e.target.classList.toggle('selected');
         value = e.target.dataset.number;
-
-        console.log(` ${value} `);
-
-    });
+    }
 });
 
-btnSubmit.addEventListener('click', () => {
+
+const deseleccionarBotones = () => {
+    for (const btn of btnsRate) {
+        if (btn.classList.contains('selected')) {
+            btn.classList.toggle('selected');
+        }
+    };
+};
+
+const cambiarCard = () => {
     cardRating.classList.toggle('oculto');
     cardTankYou.classList.toggle('oculto');
-
-    numberRated.textContent = value
-});
+};

@@ -174,6 +174,10 @@ div.card#tankYou .card_header span#template {
   margin-top: 20px;
   padding: 8px 16px;
   color: #fb7413;
+  display: inline-block;
+}
+div.card#tankYou .card_header span#template span#numberReated {
+  display: inline-block;
 }
 div.card#tankYou .card_body .card_title {
   text-align: center;
