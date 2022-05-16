@@ -1,0 +1,29 @@
+%btn-general
+    padding: 10px 0
+    display: block
+
+    text-align: center
+    text-decoration: none
+
+    font-weight: $fontWeightBold
+
+    letter-spacing: .7px
+
+    border-radius: 50px  
+
+a.button
+    @extend %btn-general
+
+    color: $white
+
+    background-color: $primary
+
+    transition: background .2s, easy-in-out
+            
+    &:hover
+        background-color: lighten($primary, 3)
+
+    &:active
+        background-color: darken($primary, 3)
+
+        

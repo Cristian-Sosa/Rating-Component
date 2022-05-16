@@ -4,6 +4,10 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 body {
@@ -32,46 +36,26 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.main .card {
-  width: 300px;
-  height: auto;
-  margin-bottom: 20px;
-  padding: 25px;
-  background-color: #212831;
-  border-radius: 15px;
-}
-.main .card.oculto {
-  display: none;
-}
-.main .card#rating .card_header {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-}
-.main .card#rating .card_header img {
-  margin-bottom: 15px;
-  padding: 10px;
+
+div.card#tankYou .card_header span#template, .card#rating .card_header, .number li {
+  width: 40px;
+  height: 40px;
   background-color: #262e38;
-  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
 }
-.main .card_body {
-  margin-bottom: 20px;
-}
-.main .card_body .card_title {
-  margin-bottom: 15px;
-  display: block;
-  color: white;
-  font-weight: 700;
-}
-.main .card_body .card_text {
-  display: block;
-  color: #7c8798;
-  font-size: 15px;
-  font-weight: 400;
-}
-.main .card_rate {
-  width: 100%;
-}
-.main .card_rate .number {
+
+.number {
   width: 100%;
   height: auto;
   margin-bottom: 20px;
@@ -92,59 +76,81 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.main .card_rate .number li {
-  width: 40px;
-  height: 40px;
+.number li {
   color: #959eac;
   font-weight: 700;
-  background-color: #262e38;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 100%;
+  -webkit-transition: background 0.2s, color 0.2s, easy-in-out;
+  transition: background 0.2s, color 0.2s, easy-in-out;
   cursor: pointer;
-  -webkit-transition: background 0.2s, easy-in-out;
-  transition: background 0.2s, easy-in-out;
 }
-.main .card_rate .number li.selected {
+.number li:hover {
+  background-color: #7c8798;
+  color: #252d37;
+}
+.number li.selected {
   background-color: #fb7413;
 }
-.main .card_rate .number li:hover {
-  background-color: #7c8798;
-}
-.main .card a {
+
+a.button {
   padding: 10px 0;
   display: block;
   text-align: center;
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.7px;
+  border-radius: 50px;
+}
+
+a.button {
   color: white;
   background-color: #fb7413;
-  border-radius: 20px;
-  -webkit-transition: background 0.2s, color 0.2s, easy-in-out;
-  transition: background 0.2s, color 0.2s, easy-in-out;
+  -webkit-transition: background 0.2s, easy-in-out;
+  transition: background 0.2s, easy-in-out;
 }
-.main .card a:hover {
-  background-color: white;
+a.button:hover {
+  background-color: #fc7d22;
+}
+a.button:active {
+  background-color: #fb6b04;
+}
+
+div.attribution {
+  color: white;
+}
+div.attribution a {
   color: #fb7413;
 }
 
-#tankYou .card_header {
+div.card#tankYou .card_body .card_title, .card#rating .card_title {
+  margin-bottom: 15px;
+  display: block;
+  color: white;
+  font-weight: 700;
+}
+
+div.card#tankYou .card_body .card_text, .card#rating .card_text {
+  display: block;
+  color: #7c8798;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.card {
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 25px;
+  background-color: #212831;
+  border-radius: 15px;
+}
+
+.card#rating .card_header {
+  margin-bottom: 16px;
+}
+.card#rating .card_body {
+  margin-bottom: 20px;
+}
+div.card#tankYou .card_header {
   width: 100%;
-  height: auto;
   margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -162,21 +168,20 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-#tankYou .card_header span#template {
+div.card#tankYou .card_header span#template {
+  width: auto;
+  height: auto;
   margin-top: 20px;
-  padding: 5px 10px;
+  padding: 8px 16px;
   color: #fb7413;
-  background-color: #262e38;
-  border-radius: 20px;
 }
-
-#tankYou .card_body .card_title, #tankYou .card_body .card_text {
+div.card#tankYou .card_body .card_title {
+  text-align: center;
+}
+div.card#tankYou .card_body .card_text {
   text-align: center;
 }
 
-.attribution {
-  color: white;
-}
-.attribution a {
-  color: #fb7413;
+.oculto {
+  display: none;
 }

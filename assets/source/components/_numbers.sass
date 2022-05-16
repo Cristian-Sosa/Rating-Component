@@ -1,0 +1,48 @@
+%btn-circular
+    width: 40px
+    height: 40px
+
+    background-color: lighten($darkBlue, .5%)
+
+    display: flex
+    flex-wrap: nowrap
+    justify-content: center
+    align-items: center
+
+    border-radius: 50px
+    
+.number
+    width: 100%
+    height: auto
+
+    margin-bottom: 20px
+
+    list-style: none
+
+    display: flex
+
+    flex-direction: row
+    flex-wrap: nowrap
+
+    justify-content: space-between
+    align-items: center
+
+
+    li
+        @extend %btn-circular
+
+        color: $lightGrey
+
+        font-weight: $fontWeightBold
+
+        transition: background .2s, color .2s, easy-in-out
+
+        cursor: pointer
+
+        &:hover
+            background-color: $mediumGrey
+            
+            color: $darkBlue 
+
+        &.selected
+            background-color: $primary

@@ -1,0 +1,84 @@
+%title-general
+    margin-bottom: 15px
+
+    display: block
+
+    color: $white
+
+    font-weight: $fontWeightBold
+
+
+%text-general
+    display: block
+
+    color: $mediumGrey
+
+    font-size: 15px
+    font-weight: $fontWeightRegular
+.card
+    width: 300px
+
+    margin-bottom: 20px
+    padding: 25px
+
+    background-color: darken($darkBlue, 2%)
+
+    border-radius: 15px
+
+
+.card#rating
+    .card_header
+        @extend %btn-circular
+
+        margin-bottom: 16px
+
+    .card_body
+        margin-bottom: 20px
+
+    // DENTRO DEL CARD_BODY
+    .card_title
+        @extend %title-general
+
+    .card_text
+        @extend %text-general
+
+
+div.card#tankYou
+    
+    .card_header
+        width: 100%
+
+        margin-bottom: 20px
+
+        display: flex
+        flex-direction: column
+        flex-wrap: nowrap
+        justify-content: center
+        align-items: center
+
+        span#template
+            @extend %btn-circular
+
+            width: auto
+            height: auto
+
+            margin-top: 20px
+
+            padding: 8px 16px
+
+            color: $primary
+
+    .card_body 
+        .card_title
+            @extend %title-general
+
+            text-align: center
+
+        .card_text
+            @extend %text-general
+
+            text-align: center
+
+
+.oculto
+    display: none

@@ -21,7 +21,7 @@ btnsRate.forEach(btnRate => {
         e.target.classList.toggle('selected');
         value = e.target.dataset.number;
 
-        console.log(value);
+        console.log(` ${value} `);
 
     });
 });
